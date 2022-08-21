@@ -4,8 +4,7 @@
 
 
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+
   color: #5a5a5a;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
@@ -13,6 +12,7 @@ body {
   height: 100vh;
   
 }
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -39,15 +39,17 @@ body {
 .calculator-grid {
   display: grid;
   justify-content: center;
-  min-height: 80vh;
+  align-content: center;
+  min-height: 100vh;
+  
   grid-template-columns: repeat(4, 100px);
-  /* grid-template-rows: repeat(5, 100px) minmax(100px, 120px ; */
+  grid-template-rows: repeat(5, 100px) minmax(100px, 120px) ;
 }
 
 .calculator-grid > button {
   font-size: 30px;
 
-  padding: 10px;
+  
 
 
   /* button outline opacity */
@@ -69,11 +71,25 @@ body {
 
 .output{
   grid-column: 1/-1;
-  background-color: white;
-  padding: 19px;
+  background-color: rgba(43, 43, 43, 0.807);
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-break: break-all;
+
+}
+
+.output .prev-operand {
+  color: white;
+  font-size: 19px;
+}
+
+
+.output .post-operand {
+  color: white;
+  font-size: 24px;
 }
 /* RESPONSIVE CSS
 -------------------------------------------------- */
