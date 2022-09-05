@@ -12,11 +12,12 @@ class Calculator {
     }
 
     delete(){
-
+        this.postOperand = this.postOperand.toString().slice(0, -1);
     }
 
     appendNumber (number){
         if (number === "." && this.postOperand.includes(".")) return                    // check incoming fullstop against existing number to avoid duplicate points
+       
         this.postOperand = this.postOperand.toString() + number.toString();             
         
     }
@@ -113,8 +114,15 @@ equalButton.addEventListener('click', () => {
     }
 )
 
+deleteButton.addEventListener('click', () => {
+    calculator.delete();
+    calculator.updateDisplay();
+    }
+)
 
 
-//
-//
-//
+
+// TODO
+// Calculator should have history
+// Fix automatic display deletion after computation
+// Buttons shouold be interactive
